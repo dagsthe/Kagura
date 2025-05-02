@@ -5,10 +5,10 @@ import Header from './components/header'
 import Gamecard from "./components/ui/Gamecard"
 import Footer from "./components/footer"
 import {gameIds} from "./gameIds"
-import {Link} from "react-router-dom"
+//import {Link} from "react-router-dom"
 import Button from '@mui/material/Button';
 
-import { Fade, Roll, Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 
 import { amber } from '@mui/material/colors';
 import PlayerButton from './components/ui/PlayerButton'
