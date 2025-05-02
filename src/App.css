@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+body{
+    background-color: #171717;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#gradientbackground{
+    background: radial-gradient(circle, rgba(255, 94, 0, 0.349) 0%, rgba(0, 0, 0, 1) 100%);
+    animation: brightnessAnimation 5s ease-in-out infinite
+}
+@keyframes brightnessAnimation {
+    0% {
+      filter: brightness(0.5); /* Dimmed background */
+    }
+    50% {
+      filter: brightness(1); /* Brighter background */
+    }
+    100% {
+      filter: brightness(0.5); /* Dimmed background again */
+    }
+  }
+  
+
+.animated-gradient {
+    background: linear-gradient(-45deg, #1f1c18, #b70000, #333333, #dd1818);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
