@@ -5,7 +5,7 @@ import Header from './components/header'
 import Gamecard from "./components/ui/Gamecard"
 import Footer from "./components/footer"
 import {gameIds} from "./gameIds"
-//import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 import Button from '@mui/material/Button';
 
 import { Fade, Slide } from "react-awesome-reveal";
@@ -33,6 +33,13 @@ function App() {
         setInit(true);
     });
   }, []);
+
+  const handleScroll = (id:string) => {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -76,13 +83,13 @@ function App() {
         </Slide>
 
         
-        <h2 className='text-white text-xl font-light text-center'>Dreaming, innovating, and empowering ideas.</h2>
+        <h2 className='text-white text-xl font-light text-center'>Empowering ideas through innovation</h2>
         <div className='flex gap-5 mt-5'>
-          <Button variant='outlined' sx={{
+          <Button onClick={() => {handleScroll("experiences")}} variant='outlined' sx={{
             borderColor: amber[700],
             color: amber[700]
           }}>Exploure our games</Button>
-          <Button variant='outlined' sx={{
+          <Button onClick={() => {handleScroll("contact")}} variant='outlined' sx={{
             borderColor: amber[700],
             color: amber[700]
           }}>Contact Us</Button>
@@ -108,7 +115,7 @@ function App() {
       </section>
       
         
-      <section className='text-center mt-10 h-auto min-h-screen'>
+      <section id='experiences' className='text-center mt-10 h-auto min-h-screen'>
           <h1 className='text-4xl font-bold mb-10 text-white'>Our Top Experiences</h1>
 
           <Slide direction='left' triggerOnce={true}>
@@ -121,17 +128,17 @@ function App() {
             </Fade>
           </Slide>
 
-
-          <Button variant='outlined'sx={{
-            borderColor: amber[700],
-            color: amber[700]
-          }} >See All Experiences &gt;</Button>
-          
+          <Link to={"experiences"}>
+            <Button variant='outlined'sx={{
+              borderColor: amber[700],
+              color: amber[700]
+            }} >See All Experiences &gt;</Button>
+          </Link>
       </section>
         
      
 
-      <section className='text-white flex flex-col lg:flex-row items-center text-center justify-center'>
+      <section id='aboutus' className='text-white flex flex-col lg:flex-row items-center text-center justify-center'>
         <div className='w-[30%]'>
           <h1 className='text-[#ffa000] text-center'>Our Team</h1>
           <div className='flex md:grid items-center justify-center md:grid-cols-2 gap-x-10 lg:gap-y-20'>
@@ -147,8 +154,8 @@ function App() {
         <div className='text-lg flex flex-col gap-5 w-[90%] lg:w-[50%]'>
           <Fade delay={1000} cascade={true} damping={0.3} triggerOnce={true}>
             <h1>About Us</h1>
-            <p>Founded in 2024, Kagura is a fast-growing indie game development studio with a passion for creating engaging and high-quality experiences on the Roblox platform. While our official journey began recently, our team brings over 7 years of experience in every core aspect of game development—from design and programming to art and community engagement.</p>
-            <p>Our games have captured the hearts of players across all ages, generating seven-figure success and building a loyal, ever-growing community. At Kagura Studios, we believe in the power of creativity and innovation to bring people together. That’s why we’re not just here to build games—we're here to inspire the next generation of developers to dream big and create something truly special.</p>
+            <p>Founded in 2024, Kagura is a fast-growing indie game development studio with a passion for creating engaging and high-quality experiences on the Roblox platform. While our official journey began recently, our team brings over 25 years of experience in every core aspect of game development—from design and programming to art and community engagement.</p>
+            <p>Our games have captured the hearts of players across all ages, generating seven-figure success and building a loyal, ever-growing community. At Kagura, we believe in the power of creativity and innovation to bring people together. That’s why we’re not just here to build games—we're here to inspire the next generation of developers to dream big and create something truly special.</p>
             <p>Whether you're here to play or to learn, you're a part of our story.</p>
           </Fade>
 
@@ -160,11 +167,11 @@ function App() {
       <section className='flex flex-col lg:flex-row items-center lg:items-start gap-5 justify-between px-5 lg:px-50 mt-16'>
 
 
-        <div className='text-white w-[80%] lg:w-[40%]'>
+        <div id='contact' className='text-white w-[80%] lg:w-[40%]'>
           <Fade>
             <Slide triggerOnce={true}>
               <h1>Lets Connect!</h1>
-              <p>Have questions or want to collaborate? Reach out to Kagura Studios—we're always happy to connect! For inquiries, feedback, or press-related matters, drop us a message and we’ll get back to you soon</p>
+              <p>Have questions or want to collaborate? Reach out to Kagura we're always happy to connect! For inquiries, feedback, or press-related matters, drop us a message and we’ll get back to you soon</p>
               <div className='flex h-8 aspect-square gap-5 mt-5'>
                 <img className='invert' src='https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg'></img>
                 <img className='invert' src='https://www.svgrepo.com/show/473495/youtube.svg'></img>

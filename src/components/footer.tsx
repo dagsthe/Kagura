@@ -1,22 +1,25 @@
 import CompanyTitle from "./ui/CompanyTitle"
 import { Link } from "react-router-dom";
+import {useClickManager} from "./clickManager"
 
 export default function(){
+    const clickManager = useClickManager()
+
     return (
     <>
     
     <div className="flex flex-col md:flex-row justify-center items-center gap-[20%] lg:gap-[50%] w-full">
         <CompanyTitle className="text-white brightness-90"/>
         <div className="flex text-white brightness-90 items-center gap-7">
-            <Link to={"/"}>
+            <Link onClick={(e) => clickManager("", e)} to={"/"}>
                 <p>Home</p>
             </Link>
             
-            <Link to={"/contact"}>
+            <Link onClick={(e)=>clickManager("experiences",e)} to={"/experiences"}>
                 <p>Experiences</p>
             </Link>
 
-            <Link to={"/team"}>
+            <Link onClick={(e) => clickManager("contact", e)} to={"/team"}>
                 <p>Contact Us</p>
             </Link>
         </div>

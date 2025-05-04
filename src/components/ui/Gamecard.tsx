@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 interface Props{
     src:string,
